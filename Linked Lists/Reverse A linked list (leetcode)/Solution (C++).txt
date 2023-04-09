@@ -1,0 +1,31 @@
+class Solution {
+public:
+    // implementing a recursive functon to reverse the linked list
+    ListNode* reverse(ListNode* temp){
+        // base_case
+        if (temp == nullptr || temp -> next == nullptr){
+            return temp;
+        }
+        // recursive call
+        ListNode* newHead = reverse(temp -> next);
+        // reversing the links
+        temp -> next -> next = temp;
+        temp -> next = nullptr;
+        return newHead;
+    }
+    
+    ListNode* reverseList(ListNode* head) {
+        
+        ListNode* fin = reverse(head);
+
+        ListNode* temp = fin;
+        // just put a print statement to check if the code is functon alright
+        while(temp != NULL){
+            cout << temp -> val;
+            temp = temp -> next;
+        }
+        return fin;
+    }
+};
+
+//problem link : - https://leetcode.com/problems/reverse-linked-list/description/
