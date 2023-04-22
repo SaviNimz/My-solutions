@@ -1,0 +1,13 @@
+Brute Force solution to this problem will take O(n^3) time complexity
+	-O(n^2) to check all possible substrings
+	-O(n) to check if given substring is a palindrome
+
+But by using dynamic programming we can reduce the time complexity to O(n^2)
+
+Our approach here is simple. We assume every character in the string as a middle position of a 
+palindrome and use two pointers to check in left and right directions. In this process we store the
+longest palindromic string we can get. After doing this process for every element in the string 
+we will get the maximum possible length of the palindromic substring
+
+	-We need to keep in mind that there can be one edge case where length of the palindrome
+	 is even ( we have to specially handle that case)
