@@ -1,0 +1,19 @@
+Link:- https://leetcode.com/problems/longest-common-subsequence/description/
+
+One of the most famous dynamic programming questions. This need a two dimensional dynamic programming
+approach.
+
+There are two ways to solve this (Actually there is more than two)
+	-Using recursion
+	-Using tabulation
+
+
+Recursive solution without memorization will take O(2^n) time complexity to execute
+So if we use recursive solution we need to use a memorizaton table too.
+size of the memorization table will be m*n (m,n are the lengths of the two strings we check) so the 
+time complexity will be O(m*n). And this approach is top down
+
+
+In tabulation approach too we will have to make a table of size(m+1*n+1) and the time complexity will be
+O(m*n). This approach is a bottom up approach.
+

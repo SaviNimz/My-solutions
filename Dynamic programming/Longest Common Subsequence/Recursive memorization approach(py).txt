@@ -1,0 +1,18 @@
+class Solution:
+    def longestCommonSubsequence(self, text1: str, text2: str) -> int:
+
+        def lcm(word_1, word_2, i, j, memo):
+            if i >= len(word_1) or j >= len(word_2):
+                return 0
+
+            if memo[i][j] != -1:
+                return memo[i][j]
+
+            if word_1[i] == word_2[j]:
+                memo[i][j] = 1 + lcm(word_1, word_2, i + 1, j + 1, memo)
+            else:
+                memo[i][j] = max(lcm(word_1, word_2, i + 1, j, memo), lcm(word_1, word_2, i, j + 1, memo))
+
+            return memo[i][j]
+        dp = [[-1 for i in range(len(text2))] for j in range(len(text1))]
+        return lcm(text1,text2,0,0,dp)
